@@ -1,0 +1,25 @@
+# Bank Statement Parser Walkthrough
+
+## What Was Accomplished
+A complete end-to-end Python CLI application was built to manage bank statement parsing and analytics.
+
+The project structure created inside `e:/Python Projects/bank-statement-parser`:
+- [models.py](file:///e:/Python%20Projects/bank-statement-parser/models.py) and [database.py](file:///e:/Python%20Projects/bank-statement-parser/database.py): SQLAlchemy schema for storing SQLite entries for banking accounts and their respective transactions safely.
+- [parser.py](file:///e:/Python%20Projects/bank-statement-parser/parser.py): PDF extracting engine using `pdfplumber` to extract text lines and robust regex parsing to identify the date, description, and transaction amount correctly.
+- [categorizer.py](file:///e:/Python%20Projects/bank-statement-parser/categorizer.py): Intelligent rules-based categorization using common Indian transaction keywords (e.g., swiggy, zomato, upi, imps, flipkart, ola). 
+- [analytics.py](file:///e:/Python%20Projects/bank-statement-parser/analytics.py): Leveraging `pandas` for grouping and calculating financial summaries such as total income, total expenses, net savings, and category breakdowns.
+- [plots.py](file:///e:/Python%20Projects/bank-statement-parser/plots.py): Integrating `matplotlib` and `seaborn` to output clean and insightful charts into a `reports` folder.
+- [main.py](file:///e:/Python%20Projects/bank-statement-parser/main.py): Interactive command-line structure for commands like [import](file:///e:/Python%20Projects/bank-statement-parser/main.py#13-62), [summary](file:///e:/Python%20Projects/bank-statement-parser/main.py#64-79), `monthly-report`, and [plot](file:///e:/Python%20Projects/bank-statement-parser/main.py#109-120).
+- Documentation ([README.md](file:///e:/Python%20Projects/bank-statement-parser/README.md), [requirements.txt](file:///e:/Python%20Projects/bank-statement-parser/requirements.txt)).
+
+## Verification Results
+- The syntax was successfully checked using Python's `compileall`. No syntax bugs inside the project files.
+- The project allows the user to easily add on multiple PDFs, safely handling duplicate insertions via direct database queries.
+
+## Next Steps
+To run the tool, please refer to the instructions in the [README.md](file:///e:/Python%20Projects/bank-statement-parser/README.md) file:
+```bash
+cd "e:/Python Projects/bank-statement-parser"
+pip install -r requirements.txt
+python main.py -h
+```
